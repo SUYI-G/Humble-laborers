@@ -10,17 +10,20 @@ public:
     vector<vector<int>> generateMatrix(int n) {
         vector<vector<int> > resultMatrix(n, vector<int>(n, 0));
         int loop = n / 2;   //转的圈数
-        int start_x = 0, start_y = 0, element = 1;
-        for (int n_loop = 0;n_loop < loop;n_loop++) {
+        int start_x = 0, start_y = 0, element = 1, middle = n / 2;
+        for (int n_loop = 0;n_loop < loop + 1;n_loop++) {
             start_x = n_loop;
             start_y = n_loop;
-            for (int i = 0;i < n - n_loop;i++) {    //从左至右填充上行
+            for (int i = 0;i < n - 1 - n_loop * 2;i++) {    //从左至右填充上行
                 if (element < n * n + 1) {
                     resultMatrix[start_x][start_y + i] = element;
                     element++;
                 }
                 else {
-                    break;
+                    if (n % 2) {
+                        resultMatrix[middle][middle] = element;
+                    }
+                    return resultMatrix;
                 }
             }
             for (int i = 0;i < n - 1 - n_loop * 2;i++) {    //从上至下填充有=右列
@@ -29,40 +32,53 @@ public:
                     element++;
                 }
                 else {
-                    break;
+                    if (n % 2) {
+                        resultMatrix[middle][middle] = element;
+                    }
+                    return resultMatrix;
                 }
             }
-            for (int i = 0;i < n - n_loop;i++) {    //从右至左填充下行
+            for (int i = 0;i < n - 1 - n_loop * 2;i++) {    //从右至左填充下行
                 if (element < n * n + 1) {
                     resultMatrix[start_x + n - 1 - n_loop * 2][n - n_loop - 1 - i] = element;
                     element++;
                 }
                 else {
-                    break;
+                    if (n % 2) {
+                        resultMatrix[middle][middle] = element;
+                    }
+                    return resultMatrix;
                 }
             }
             for (int i = 0;i < n - 1 - n_loop * 2;i++) {  //从下至上填充左列
                 if (element < n * n + 1) {
-                    resultMatrix[start_x + i][start_y] = element;
+                    resultMatrix[n - 1 - n_loop - i][start_y] = element;
                     element++;
                 }
                 else {
-                    break;
+                    if (n % 2) {
+                        resultMatrix[middle][middle] = element;
+                    }
+                    return resultMatrix;
                 }
             }
+        }
+        if (n % 2) {
+            resultMatrix[middle][middle] = element;
         }
         return resultMatrix;
     }
 };
 
 void main() {
-    int n = 3;
+    int n = 6;
     Solution solution;
-    vector<vector<int> > resultMatrix = solution.generateMatrix(n);
-    for (int i = 0; i != resultMatrix.size();i++)
+    vector<vector<int> > resultMatrix;
+    resultMatrix = solution.generateMatrix(n);
+    for (int k = 0; k < n;k++)
     {
-        for (int j = 0; j != resultMatrix[0].size();j++) {
-            cout << resultMatrix[i][j] << " ";
+        for (int t = 0; t < n;t++) {
+            cout << resultMatrix[k][t] << " ";
         }
         cout << endl;
     }
