@@ -1,5 +1,8 @@
 /*203. 移除链表元素
-给你一个链表的头节点 head 和一个*/整数 val ，请你删除链表中所有满足 Node.val == val 的节点，并返回 新的头节点 。
+给你一个链表的头节点 head 和一个整数 val ，请你删除链表中所有满足 Node.val == val 的节点，并返回 新的头节点 。*/
+
+#include <iostream>
+using namespace std;
 
 /**
  * Definition for singly-linked list.
@@ -11,6 +14,16 @@
  *     ListNode(int x, ListNode *next) : val(x), next(next) {}
  * };
  */
+
+struct ListNode {
+    int val;
+    ListNode* next;
+    ListNode() : val(0), next(nullptr) {}
+    ListNode(int x) : val(x), next(nullptr) {}
+    ListNode(int x, ListNode* next) : val(x), next(next) {}
+};
+
+//普通方法
 class Solution {
 public:
     ListNode* removeElements(ListNode* head, int val) {
@@ -31,6 +44,29 @@ public:
                 tmp1 = tmp1->next;
             }
         }
+        return head;
+    }
+};
+
+//设置虚拟头结点
+class Solution1 {
+public:
+    ListNode* removeElements(ListNode* head, int val) {
+        ListNode* dummyHead = new ListNode(0);
+        dummyHead->next = head;
+        ListNode* cur = dummyHead;
+        while (cur->next != NULL) {
+            if (cur->next == val) {
+                ListNode* temp = cur->next;
+                cur->next = cur->next->next;
+                delete temp;
+            }
+            else {
+                cur = cur->next;
+            }
+        }
+        head = dummyHead->next;
+        delete dummyHead;
         return head;
     }
 };
