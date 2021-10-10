@@ -10,6 +10,6 @@
 The three of us are going to be humble laborers. This is part of our preperation for the job interview.
 
 First of all, we need a lot of practice.
-Exercise problems are obtained from https://programmercarl.com/. We decided to complete one problem every day and upload the code starting from 2021.9.28. In order to encourage and improve ourselves, we have an agreement that the person who complete the least number of practice questions will pay for the milk tea for us three when we meet.
+Exercise problems are obtained from https://programmercarl.com/. We decide to complete one problem every day and upload the code starting from 2021.9.28. In order to encourage and improve ourselves, we have an agreement that the person who complete the least number of practice questions will pay for the milk tea for us three when we meet.
 
 As a result, let's fight for self-improvements, for a brighter future and most importantly, for free milk tea! 
