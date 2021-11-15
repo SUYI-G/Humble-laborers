@@ -13,3 +13,10 @@ First of all, we need a lot of practice.
 Exercise problems are obtained from https://programmercarl.com/. We decide to complete one problem every day and upload the code starting from 2021.9.28. In order to encourage and improve ourselves, we have an agreement that the person who complete the least number of practice questions will pay for the milk tea for us three when we meet.
 
 As a result, let's fight for self-improvements, for a brighter future and most importantly, for free milk tea! 
+
+
+
+2021.11.1
+我们不久前进行了一次三方会面，这意味着第1轮PK已经落幕。现在，第2轮开始了。规则照旧，彩头依旧是下次见面的奶茶。为了免费奶茶！
+
+Us three met not long ago, which means that the first round of the competition is over. Now, the second round begins. The rules are still the same, and the prize is still the milk tea for the next meeting. For free milk tea!
