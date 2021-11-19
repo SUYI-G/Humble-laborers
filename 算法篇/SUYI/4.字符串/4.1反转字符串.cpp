@@ -14,6 +14,7 @@ public:
             temp = s[i];
             s[i] = s[j];
             s[j] = temp;
+            //swap(s[i], s[j]);     //上面4行可用此行代替
         }
     }
 };
