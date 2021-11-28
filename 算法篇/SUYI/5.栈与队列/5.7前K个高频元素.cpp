@@ -8,6 +8,7 @@ using namespace std;
 #include <queue>
 #include < unordered_map >
 
+//定义一个小顶堆，大小为k，按照元素出现的频率排序，多的元素进来就把顶部最小的弹出去
 class Solution {
 public:
     class myComparison {
